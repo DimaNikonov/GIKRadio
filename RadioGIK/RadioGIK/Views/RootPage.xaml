@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:RadioGIK.ViewModels"
+             xmlns:imageCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="RadioGIK.Views.RootPage"
+             BackgroundColor="Black"
+             NavigationPage.HasNavigationBar="False">
+    
+        <Grid BackgroundColor="Black"
+              Margin="20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0"
+               Text="{Binding Title}" 
+               Font="20"
+               HorizontalTextAlignment="Center"
+               VerticalOptions="Center"
+               TextColor="White"/>
+            <Button Grid.Row="0"
+                Image="{Binding CloseButton}"
+                HorizontalOptions="End"    
+                BackgroundColor="Transparent"
+                HeightRequest="30"
+                WidthRequest="48"
+                Command="{Binding BackCommand}"/>
+            <Grid Grid.Row="1"
+              HorizontalOptions="Fill">
+
+                <ListView ItemsSource="{Binding InfoCollection}"
+                          HasUnevenRows="True"
+                          BackgroundColor="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <Grid HeightRequest="104">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <imageCircle:CircleImage Grid.Column="0"
+                                                             HeightRequest="52"
+                                                             WidthRequest="52"
+                                                             Source="{Binding Picture}"/>
+                                    <Grid Grid.Column="1"
+                                          VerticalOptions="Center"
+                                          Margin="20,0,8,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0"
+                                               HorizontalTextAlignment="Start"
+                                               VerticalTextAlignment="End"
+                                               TextColor="White" 
+                                               Text="{Binding Artist}"/>
+                                        <Label Grid.Row="1" 
+                                               HorizontalTextAlignment="Start"
+                                               VerticalTextAlignment="Start"
+                                               TextColor="White"
+                                               Text="{Binding Title}"/>
+                                    </Grid>
+                                    <Label Grid.Column="2"
+                                           VerticalOptions="Center"
+                                           TextColor="White"
+                                           Text="{Binding Time}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </Grid>
+        </Grid>
+   
+</ContentPage>

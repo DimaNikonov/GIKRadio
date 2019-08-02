@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioGIK.Android", "RadioGIK\RadioGIK.Android\RadioGIK.Android.csproj", "{B3EF8348-AAC5-4339-8DBA-0447D5D90108}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "RadioGIK", "RadioGIK\RadioGIK\RadioGIK.shproj", "{FC094B96-BD7E-4366-BB9A-CD6B47715CB6}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		RadioGIK\RadioGIK\RadioGIK.projitems*{b3ef8348-aac5-4339-8dba-0447d5d90108}*SharedItemsImports = 4
+		RadioGIK\RadioGIK\RadioGIK.projitems*{fc094b96-bd7e-4366-bb9a-cd6b47715cb6}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3EF8348-AAC5-4339-8DBA-0447D5D90108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3EF8348-AAC5-4339-8DBA-0447D5D90108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3EF8348-AAC5-4339-8DBA-0447D5D90108}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B3EF8348-AAC5-4339-8DBA-0447D5D90108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3EF8348-AAC5-4339-8DBA-0447D5D90108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3EF8348-AAC5-4339-8DBA-0447D5D90108}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1382DA5B-FBA1-4E01-BC7B-92DBEDED08A9}
+	EndGlobalSection
+EndGlobal

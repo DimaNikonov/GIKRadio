@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RadioGIK"
+             xmlns:mainViewModel="clr-namespace:RadioGIK.ViewModels"
+             xmlns:imageCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="RadioGIK.MainPage" 
+             BackgroundColor="Black"            
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <mainViewModel:MainPageViewModel/>
+    </ContentPage.BindingContext>
+    <Grid BackgroundColor="Black">
+        <Image Source="{Binding Cover,Mode=OneWay} "
+               Opacity="0.1"
+               Aspect="AspectFill"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="400"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+                <RowDefinition Height="44"/>
+            </Grid.RowDefinitions>
+            <imageCircle:CircleImage Grid.Row="0"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"
+                                     WidthRequest="300"
+                                     HeightRequest="300"
+                                     Aspect="AspectFit"
+                                     
+                                     Source="{Binding Cover,Mode=OneWay}"/>
+            <!--<Button Grid.Row="0" 
+                    CornerRadius="50"
+                    WidthRequest="100"
+                    HeightRequest="100"
+                    BackgroundColor="Transparent"
+                    Image="{Binding Source=SongInfo.Cover,Mode=TwoWay}"/>-->
+
+            <Label Grid.Row="1"
+                   Text="{Binding SongInfo.Artist}"
+                   Font="16"
+                   FontFamily="UbuntuMedium" 
+                   FontAttributes="Bold"
+                   TextColor="White"                       
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"/>
+
+            <Label Grid.Row="2"
+                   Font="16"
+                   FontFamily="UbuntuLight"                   
+                   TextColor="White"
+                   Text="{Binding SongInfo.Title}"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"/>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="56"/>
+                    <ColumnDefinition Width="56"/>
+                    <ColumnDefinition Width="56"/>
+                    <ColumnDefinition Width="56"/>
+                    <ColumnDefinition Width="56"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="SchedullerButton"
+                        Grid.Column="1"                       
+                        BackgroundColor="Transparent"
+                        Image="{Binding SchedullerButton}"
+                        Command="{Binding ScheduleCommand}"/>
+                <Button x:Name="HistoryButton"
+                        Grid.Column="2"
+                        BackgroundColor="Transparent"
+                        Image="{Binding HistoryButton}"
+                        Command="{Binding HistoryCommand}"/>
+                <Button x:Name="StartStopButton"
+                        Grid.Column="3"
+                        Image="{Binding StartStopButton}"
+                        BackgroundColor="Transparent"
+                        Command="{Binding StartStopCommand, Mode=TwoWay}"/>
+                <Button x:Name="NextButton"
+                        Grid.Column="4"
+                        BackgroundColor="Transparent"
+                        Image="{Binding NextButton}"
+                        Command="{Binding NextCommand}"/>
+                <Button x:Name="SettingsButton"
+                        Grid.Column="5"
+                        BackgroundColor="Transparent"
+                        Image="{Binding SettingsButton }"
+                        Command="{Binding SettingsCmmand}"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>
